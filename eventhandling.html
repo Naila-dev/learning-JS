@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Event Handling Practice</title>
+  <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+<!-- this is my heading -->
+  <h1>Event Handling Practice</h1>
+
+  <!-- my paragraph -->
+  <p id="myParagraph">This is my paragraph</p>
+
+<!-- button one -->
+  <button onclick="changeText()">Change Paragraph Text</button>
+  <br> <br>
+
+  <!-- button two -->
+  <button onclick="changeBackground()">Change Background Color</button>
+
+  <script>
+    function changeText() {
+      document.getElementById('myParagraph').textContent = 'hi,learned a new trick!';
+    }
+
+    function changeBackground() {
+  document.body.style.backgroundColor = '#FF69B4'; <i class="fas fa-piggy-bank    "></i>
+}
+
+  </script>
+
+</body>
+</html>
