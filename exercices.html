@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Exercise in class</title>
+</head>
+<body>
+
+  <!--my h1 with the id heading -->
+  <h1 id="heading">Hello, World!</h1>
+
+  <!-- my paragrph with the id para -->
+  <p id="para">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit.<br>
+    Temporibus tempore necessitatibus amet accusantium modi,<br>
+    rerum explicabo? Velit et nihil dolorum beatae perferendis <br> 
+    libero natus harum sint, ex labore hic pariatur?
+  </p>
+
+  <script>
+    // i went for the H1 element with the id heading and first gave it a constant
+    const heading = document.getElementById("heading");
+
+    //i added the mouse hovering effect
+    heading.addEventListener("mouseover", function () {
+
+      // create the new p element and add the color
+      const newParagraph = document.createElement("p");
+      newParagraph.textContent = "Welcome to FCA";
+      newParagraph.style.color = "green";
+
+      // i now replaced the h1 with a <p> so that on hover it changes
+      heading.parentNode.replaceChild(newParagraph, heading);
+    });
+
+    // got the p element with the id para
+    const paragraph = document.getElementById("para");
+
+    // added an eventlister with click command
+    paragraph.addEventListener("click", function () {
+
+      // because it a p i want to change it to a h1 so had to create a h1 element
+      const newHeading = document.createElement("h1");
+
+      // this is the content of now my h1 and also the color change
+      newHeading.textContent = "My name is Faith";
+      newHeading.style.color = "yellow";
+
+      // i added another eventlistener to the new h1 so that when clicked it turns back to the original p
+      newHeading.addEventListener("click", function () {
+        const originalParagraph = document.createElement("p");
+        originalParagraph.textContent = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus tempore necessitatibus amet accusantium modi, rerum explicabo? Velit et nihil dolorum beatae perferendis libero natus harum sint, ex labore hic pariatur?";
+        originalParagraph.id = "para"; // Keep the same ID
+
+        // and then added back the same event listener to it so it can toggle again
+        originalParagraph.addEventListener("click", arguments.callee);
+
+        // now replaced the h1 with the paragraph again
+        newHeading.parentNode.replaceChild(originalParagraph, newHeading);
+      });
+
+      //Replace the <p> with the new <h1>
+      paragraph.parentNode.replaceChild(newHeading, paragraph);
+    });
+  </script>
+
+</body>
+</html>
+
+

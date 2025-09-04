@@ -14,10 +14,36 @@
      <script>
 let content=document.getElementById("demo").innerHTML
 console.log(content);
+     </script>
 
+     <p id="demo2">This is my paragraph</p>
 
+     <script>
+let para2=document.getElementById("demo2");
+alert(para2.innerHTML);
 
      </script>
+
+
+<!-- this is my p with a function makebold -->
+<p id="Para3" onmouseover="makeBold()" onmouseout="makeNormal()">Hover over this.</p>
+
+<!-- call the function makebold -->
+<script>
+  function makeBold() {
+    document.getElementById("Para3").innerHTML = "<strong style='color:crimson;'>You hovered!</strong>";
+  }
+
+  
+  function makeNormal() {
+    // Reset to the original plain content
+    document.getElementById("Para3").innerHTML = "Hover over this.";
+  }
+</script>
+
+   
+   
+
     
 </body>
 </html>
