@@ -9,6 +9,15 @@
     <h1 id="title">Welcome!</h1>
 
     <button onclick="changeTitle()">Click Me</button>
+    <!-- the button for the event listener  -->
+     <button id="btn_event"> Click Event</button>
+
+     <p id="lorem_text">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod veniam animi
+         suscipit perferendis et mollitia aut sequi laborum nam labore eum maxime ad 
+         cum quidem, repudiandae iure quo beatae quaerat.</p>
+
+         
  
     <script> 
     // example one
@@ -17,13 +26,27 @@
 function changeTitle(){
 
     // create variable to store the h1 element
+
     let heading=document.getElementById("title");
     // change the color of the heading (the h1 element)
     heading.style.color="red";
     // change the text content of h1 element(heading variable)
+
     heading.textContent="Hello,World!";
 
 }
+
+// add event listener to the button id "btn_event"
+
+let btn2=document.getElementById("btn_event");
+
+//   action apon clicking the button
+
+btn2.addEventListener("click", function(){
+    // change the text of the paragraph with id lorem_text
+    document.getElementById("lorem_text").textContent="The text has changed";
+
+    });
 
 
 
